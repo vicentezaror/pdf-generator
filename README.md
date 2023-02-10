@@ -1,5 +1,5 @@
 # PDF Generator
-Headless (backend-side) pdf generator build for Node, relying on [Puppeteers](https://www.npmjs.com/package/puppeteer) and [Mustache](https://www.npmjs.com/package/mustache) to generate PDFs from HTML templates.
+Headless (backend-side) pdf generator build for Node, relying on [Puppeteer](https://www.npmjs.com/package/puppeteer) and [Mustache](https://www.npmjs.com/package/mustache) to generate PDFs from HTML templates.
 
 _* As this is a headless package it can be also used on frontend_
 
