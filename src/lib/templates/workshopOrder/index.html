@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <title>Workshop Document</title>
+    </head>
+    <body>
+        <main id="document-container">
+            <section id="header">
+                <figure id="logo">
+                    <img
+                        src={{workshop.logo_url}}
+                        alt="logo" />
+                </figure>
+                <div id="workshop-information">
+                    <p><b>Taller:</b> {{workshop.name}}</p>
+                    <p><b>Dirección:</b> {{workshop.address}}{{#workshop.city}}, {{workshop.city}}{{/workshop.city}}</p>
+                    {{#workshop.phone}}
+                    <p><b>Fono:</b> {{workshop.phone}}</p>
+                    {{/workshop.phone}}
+                    {{#workshop.email}}
+                    <p><b>Correo:</b> {{workshop.email}}</p>
+                    {{/workshop.email}}
+                </div>
+                <p id="document-date"><b>Fecha:</b> {{date}}</p>
+            </section>
+            <h1 id="document-title">ORDEN DE TRABAJO</h1>
+            <section id="client-info">
+                <table>
+                    <tr>
+                        <th><b>Señores</b></th>
+                        <td>{{contact.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Correo</th>
+                        <td>{{contact.email}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>RUT</th>
+                        <td>{{contact.rut}}</td>
+                    </tr>
+                    <tr>
+                        <th>Teléfono</th>
+                        <td>{{contact.phone}}</td>
+                    </tr>
+                </table>
+            </section>
+            <section id="car-info">
+                <table id="car-data">
+                    <tr>
+                        <th><b>Patente</b></th>
+                        {{#workshopCar.vin}}
+                        <th><b>VIN</b></th>
+                        {{/workshopCar.vin}}
+                        <th><b>Marca</b></th>
+                        <th><b>Modelo</b></th>
+                        <th><b>Color</b></th>
+                        {{#workshopCar.year}}
+                        <th><b>Año</b></th>
+                        {{/workshopCar.year}}
+                        {{#workshopCar.km}}
+                        <th><b>Kilometraje</b></th>
+                        {{/workshopCar.km}}
+                        {{#workshopCar.fuel}}
+                        <th><b>Combustible</b></th>
+                        {{/workshopCar.fuel}}
+                    </tr>
+                    <tr>
+                        <td>{{workshopCar.plate}}</td>
+                        {{#workshopCar.vin}}
+                        <td>{{workshopCar.vin}}</td>
+                        {{/workshopCar.vin}}
+                        <td>{{workshopCar.brand}}</td>
+                        <td>{{workshopCar.model}}</td>
+                        <td>{{workshopCar.color}}</td>
+                        {{#workshopCar.year}}
+                        <td>{{workshopCar.year}}</td>
+                        {{/workshopCar.year}}
+                        {{#workshopCar.km}}
+                        <td>{{workshopCar.km}}</td>
+                        {{/workshopCar.km}}
+                        {{#workshopCar.fuel}}
+                        <td>{{workshopCar.fuel}}</td>
+                        {{/workshopCar.fuel}}
+                    </tr>
+                </table>
+            </section>
+            <section id="transaction-info">
+                <table id="transaction-detail">
+                    <tr>
+                        <th>Detalle</th>
+                        <th>Valor</th>
+                    </tr>
+                    {{#details}}
+                        <tr>
+                            <td>{{text}}</td>
+                            <td>$ {{price}}</td>
+                        </tr>
+                    {{/details}}
+                </table>
+                <div id="transaction-total">
+                    <p><b>Total:</b> $ {{totalPrice}}</p>
+                </div>
+                <div id="transaction-comment">
+                    <h4>Comentarios:</h4>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
